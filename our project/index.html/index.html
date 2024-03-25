@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<style>
+    body{
+    background-color: antiquewhite;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    font-family: 'Courier New', Courier, monospace;
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    background-color: black;
+    color: white;
+}
+nav ul li{
+    padding: 0 12px;
+}
+.brand img{
+    width: 44px;
+    padding: 0 8px;
+
+}
+.brand{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+.container{
+    min-height: 72vh;
+    background-color: black;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    width: 90%;
+    border-radius: 12px;
+    margin: 23px auto;
+    padding: 34px ;
+    background-image: url(bg.jpg);
+}
+
+.bottom{
+    position:sticky;
+    height: 130px;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    display:  flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+.icons{
+    margin: 12px 0;
+
+}
+.icons i{
+    cursor: pointer;
+}
+#myProgressBar{
+    width: 100vh;
+    cursor: pointer;
+     
+}
+.songItem{
+height: 50px;
+display: flex;
+background-color:white;
+width: 80%;
+color: black;
+margin: 12px 0;
+justify-content:  space-between;
+align-items: center;
+border-radius: 34px;
+}
+.songItem img{
+    width: 43px;
+    margin: 0 23px ;
+    border-radius: 34px;
+}
+.time{
+    margin: 0 15px;
+    /* cursor: pointer; */
+}
+.time i{
+    cursor: pointer;
+}
+.Songinfo{
+    position: absolute;
+    left: 24vw;
+}
+/* .Songinfo img{ 
+    opacity: 1;
+    transition: opacity 1 ease-in;
+} */
+/* .songitemcontainer{
+/* margin: 37px; */
+
+</style>
+<body>
+    <nav>
+        <ul>
+            <li class="brand "><img src="logo.png" alt="Spotify"> <span>Spotify</span></li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+    <div class="container">
+        
+        <div class="songlist">
+            <h1> best of NCS- no copy right</h1>
+            <div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+                <div class="songItem">
+                    <img src="covers/1.jpg" alt="1">
+                    <span>Let me love you</span>
+                    <span class="songlistplay"><span class="time">05:44<i class="far fa-circle-play"></i></span></span>
+
+                </div>
+            </div>
+        </div>
+        <div class="songBannar"></div>
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="myProgressBar" min="0" max="100">
+        <div class="icons">
+            <i class=" far fa-3x fa-solid fa-backward"></i>
+            <i class="far fa-3x fa-circle-play" id="masterpaly"></i>
+            <i class=" far fa-3x fa-solid fa-forward"></i>
+        </div>
+        <div class="Songinfo">
+            <img src="playing.gif" width="42px" alt="">let me love you justin Beber
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/51708c7d8a.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // alert("HII");
+        console.log("welcome to spotify");
+        let songIndex=0;
+        let audioElement = new Audio('1.mp3');
+        let masterPlay=document.getElementById("masterpaly");
+        let myProgressBar=document.getElementById("myProgressBar");
+
+        let songs= [
+            {songsName:"salam-e-Ishq", filePath:"songs/1.mp3", coverPath:"covers/1.jpg"}
+        ]
+        // handle play/pause click
+        masterPlay.addEventlistener('click',()=>{
+            if( audioElement.paused || audioElement.currentTime<=0)
+        })
+        myProgressBar.addEventListener('timeupdate',()=>{
+            console.log('timeupdate');
+        })
+        
+        // audioElement.play();
+
+
+    </script>
+</body>
+</html>
